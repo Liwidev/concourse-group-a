@@ -37,6 +37,6 @@ jobs:
   - set_pipeline: rsc-auth
     file: concourse-gp/gp-pipelines/node.yml
     var_files:
-      - group-a/vars/ms-2-node.yml
+      - group-a/vars/rsc-auth.yml
   - set_pipeline: rsc-web
     file: concourse-gp/gp-pipelines/java.yml
