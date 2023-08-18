@@ -1,12 +1,12 @@
 ---
 resources:
-- name: concourse-gp
+- name: concourse-gp #concourse-common
   type: git
   icon: github
   check_every: 1m
   source:
     uri: https://github.com/liwidev/concourse-test
-- name: group-a
+- name: group-a #imedia-test
   type: git
   icon: github
   check_every: 1m
@@ -18,11 +18,11 @@ jobs:
 - name: set-self
   public: true
   plan:
-  - get: group-a
+  - get: group-a #Pull from source imedia-test
     trigger: true
-  - get: concourse-gp
+  - get: concourse-gp #Pull from source concourse-common
     trigger: true
-  - set_pipeline: self
+  - set_pipeline: self #Set itself
     file: group-a/set-pipelines.yml
 
 - name: set-group-a-pipelines
@@ -43,4 +43,6 @@ jobs:
   - set_pipeline: ms-2-java
     file: concourse-gp/gp-pipelines/java.yml
   - set_pipeline: ms-3-java
+    file: concourse-gp/gp-pipelines/java.yml
+  - set_pipeline: rsc-web
     file: concourse-gp/gp-pipelines/java.yml
