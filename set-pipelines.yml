@@ -26,10 +26,11 @@ jobs:
 - name: set-example-pipelines
   public: true
   plan:
-  - get: concourse-gp
+  - get: team-a
     trigger: true
     passed: [set-self]
-  - set_pipeline: job
+  - get: concourse-gp
+  - set_pipeline: ms-1-node
     file: concourse-gp/gp-pipelines/node.yml
-  - set_pipeline: java
+  - set_pipeline: ms-1-java
     file: concourse-gp/gp-pipelines/java.yml
