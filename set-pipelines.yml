@@ -1,0 +1,35 @@
+---
+resources:
+- name: concourse-gp
+  type: git
+  icon: github
+  check_every: 1m
+  source:
+    uri: https://github.com/liwidev/concourse-test
+- name: team-a
+  type: git
+  icon: github
+  check_every: 1m
+  source:
+    uri: https://github.com/liwidev/team-a
+
+jobs:
+# update this pipeline before updating child pipelines
+- name: set-self
+  public: true
+  plan:
+  - get: team-a
+    trigger: true
+  - set_pipeline: self
+    file: team-a/set-pipelines.yml
+
+- name: set-example-pipelines
+  public: true
+  plan:
+  - get: concourse-gp
+    trigger: true
+    passed: [set-self]
+  - set_pipeline: job
+    file: concourse-gp/gp-pipelines/node.yml
+  - set_pipeline: java
+    file: concourse-gp/gp-pipelines/java.yml
