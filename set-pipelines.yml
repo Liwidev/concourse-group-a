@@ -34,15 +34,9 @@ jobs:
   - get: concourse-gp
     trigger: true
     passed: [set-self]
-  - set_pipeline: ms-1-node
-    file: concourse-gp/gp-pipelines/node.yml
-    var_files:
-      - group-a/vars/ms-1-node.yml
   - set_pipeline: rsc-auth
     file: concourse-gp/gp-pipelines/node.yml
     var_files:
       - group-a/vars/ms-2-node.yml
-  - set_pipeline: rsc-auth
-    file: concourse-gp/gp-pipelines/java.yml
   - set_pipeline: rsc-web
     file: concourse-gp/gp-pipelines/java.yml
