@@ -42,3 +42,5 @@ jobs:
     file: concourse-gp/gp-pipelines/java.yml
   - set_pipeline: ms-2-java
     file: concourse-gp/gp-pipelines/java.yml
+  - set_pipeline: ms-3-java
+  file: concourse-gp/gp-pipelines/java.yml
