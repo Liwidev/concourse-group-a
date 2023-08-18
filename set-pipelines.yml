@@ -36,7 +36,7 @@ jobs:
     passed: [set-self]
   - set_pipeline: ms-1-node
     file: concourse-gp/gp-pipelines/node.yml
-    vars_file: 
+    vars_files: 
       - group-a/vars/ms-1-node.yml
   - set_pipeline: ms-1-java
     file: concourse-gp/gp-pipelines/java.yml
