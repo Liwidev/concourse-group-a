@@ -11,7 +11,7 @@ resources:
   icon: github
   check_every: 1m
   source:
-    uri: https://github.com/liwidev/team-a
+    uri: https://github.com/Liwidev/concourse-group-a
 
 jobs:
 # update this pipeline before updating child pipelines
