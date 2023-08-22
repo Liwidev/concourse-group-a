@@ -34,9 +34,9 @@ jobs:
   - get: concourse-gp
     trigger: true
     passed: [set-self]
-  - set_pipeline: rsc-auth
+  - set_pipeline: dcd-web
     file: concourse-gp/gp-pipelines/node.yml
     var_files:
-      - group-a/vars/rsc-auth.yml
-  - set_pipeline: rsc-web
+      - group-a/vars/dcd-web.yml
+  - set_pipeline: dcd-auth
     file: concourse-gp/gp-pipelines/java.yml
