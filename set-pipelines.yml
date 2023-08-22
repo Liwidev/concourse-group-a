@@ -40,3 +40,6 @@ jobs:
       - group-a/vars/dcd-web.yml
   - set_pipeline: dcd-auth
     file: concourse-gp/gp-pipelines/java.yml
+  - set_pipeline: dcd-profiling
+    file: concourse-gp/gp-pipelines/java.yml
+
