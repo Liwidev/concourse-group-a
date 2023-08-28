@@ -41,5 +41,5 @@ jobs:
   - set_pipeline: dcd-authentication
     file: concourse-gp/gp-pipelines/java.yml
   - set_pipeline: dcd-profiling
-    file: ./scripts/java-with-sca.yml
+    file: group-a/scripts/java-with-sca.yml
 
