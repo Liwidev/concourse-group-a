@@ -38,8 +38,3 @@ jobs:
     file: concourse-gp/gp-pipelines/node.yml
     var_files:
       - group-a/vars/dcd-web.yml
-  - set_pipeline: dcd-authentication
-    file: concourse-gp/gp-pipelines/java.yml
-  - set_pipeline: dcd-profiling
-    file: group-a/scripts/java-with-sca.yml
-
